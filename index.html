@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="花都装饰专业提供高品质室内设计与装修服务。涵盖现代简约、欧式古典、新中式等多种风格，从设计到施工一站式服务。查看花都装饰案例、报价及施工流程。">
+    <meta name="keywords" content="花都装饰, 装修公司, 室内设计, 家装设计, 装修报价, 花都装修案例">
+    <title>花都装饰-专业室内设计与装修施工一站式服务平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8B5A2B;
+            --primary-hover: #6D461F;
+            --secondary-color: #F5F5F0;
+            --text-main: #333333;
+            --text-light: #666666;
+            --white: #FFFFFF;
+            --border-radius: 8px;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.1);
+            --container-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* Utility */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .text-center { text-align: center; }
+        
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .header-cta {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+            box-shadow: 0 4px 10px rgba(139, 90, 43, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 600px;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://picsum.photos/seed/decorate_hero/1920/1080.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 50px;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255,255,255,0.3);
+            padding-top: 2rem;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin: 0;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #eee;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+
+        .service-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Cases */
+        .cases-section {
+            background-color: var(--secondary-color);
+        }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+        }
+
+        .case-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .case-card:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .case-img {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .case-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .case-card:hover .case-img img {
+            transform: scale(1.05);
+        }
+
+        .case-info {
+            padding: 20px;
+        }
+
+        .case-tag {
+            font-size: 0.8rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .case-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .case-info p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Process */
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 50px;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #eee;
+            z-index: 0;
+        }
+
+        .step-item {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            flex: 1;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background-color: var(--white);
+            border: 2px solid var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            transition: background-color 0.3s;
+        }
+
+        .step-item:hover .step-number {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .step-item h4 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .step-item p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            padding: 0 15px;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .quote-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .quote-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .quote-content p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .quote-form {
+            background: var(--white);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            color: var(--text-main);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        select.form-control {
+            background-color: var(--white);
+        }
+
+        /* FAQ */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #999;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .contact-info li {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 { font-size: 2.8rem; }
+            .process-steps { flex-wrap: wrap; gap: 30px; }
+            .process-steps::before { display: none; }
+            .step-item { flex: 1 1 45%; margin-bottom: 30px; }
+            .quote-layout { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu { display: none; } /* Simplified for demo */
+            .header-cta .btn { display: none; } /* Hide CTA on mobile header, show in hero */
+            .hero h1 { font-size: 2.2rem; }
+            .hero-stats { flex-wrap: wrap; gap: 20px; }
+            .cases-grid { grid-template-columns: 1fr; }
+            .faq-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .section-title { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                <span>花都装饰</span>
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="active">首页</a></li>
+                    <li><a href="#services">服务项目</a></li>
+                    <li><a href="#cases">装修案例</a></li>
+                    <li><a href="#process">施工流程</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <a href="#quote" class="btn btn-outline">预约量房</a>
+                <a href="#quote" class="btn btn-primary">获取报价</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>让家成为您心灵的港湾<br>花都装饰为您定制理想生活</h1>
+                    <p>专注高端住宅装修设计，拥有10年行业经验。从设计构思到施工落地，我们提供透明、专业的一站式服务，让您的装修过程省心、放心。</p>
+                    <div class="hero-btns">
+                        <a href="#cases" class="btn btn-primary">浏览精选案例</a>
+                        <a href="#services" class="btn btn-outline" style="color: white; border-color: white;">了解服务详情</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <h3>500+</h3>
+                            <p>精品案例</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>10年</h3>
+                            <p>行业经验</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>98%</h3>
+                            <p>客户好评</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section-padding">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-title">全方位装饰服务</h2>
+                    <p class="section-subtitle">无论您是新房装修、旧房翻新还是商业空间设计，我们都能提供专业的解决方案。</p>
+                </div>
+                <div class="services-grid">
+                    <article class="service-card">
+                        <div class="service-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+                        </div>
+                        <h3>家装设计</h3>
+                        <p>提供现代简约、新中式、欧式、美式等多种风格设计，结合居住者生活习惯，打造个性化舒适空间。</p>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                        </div>
+                        <h3>硬装施工</h3>
+                        <p>水电改造、泥木工程、油漆涂刷等硬装环节，采用环保材料，严格执行施工标准，确保工程质量。</p>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.74 5.88-5.74 5.88-5.74-5.88z"></path><path d="M12 21.31l-5.74-5.88 5.74-5.88 5.74 5.88z"></path><path d="M12 2.69v18.62"></path></svg>
+                        </div>
+                        <h3>软装搭配</h3>
+                        <p>家具选购、窗帘定制、灯具布局及软装配饰，提升空间格调，营造温馨雅致的居住氛围。</p>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l8-4 8 4v14M8 21v-9a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v9"></path></svg>
+                        </div>
+                        <h3>旧房翻新</h3>
+                        <p>针对老房结构老化、管线陈旧、风格过时等问题，提供局部改造或整体翻新服务，焕发新家活力。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cases Section -->
+        <section id="cases" class="section-padding cases-section">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-title">精选装修案例</h2>
+                    <p class="section-subtitle">每一个案例都是我们对品质生活的诠释，看看我们的设计师如何将您的梦想家园变为现实。</p>
+                </div>
+                <div class="cases-grid">
+                    <article class="case-card">
+                        <div class="case-img">
+                            <img src="https://picsum.photos/seed/livingroom1/600/400" alt="现代简约客厅">
+                        </div>
+                        <div class="case-info">
+                            <span class="case-tag">现代简约</span>
+                            <h3>120平米 现代简约三居室</h3>
+                            <p>以白色和原木色为主调，打造通透宽敞的居住体验。</p>
+                        </div>
+                    </article>
+                    <article class="case-card">
+                        <div class="case-img">
+                            <img src="https://picsum.photos/seed/kitchen2/600/400" alt="北欧风格厨房">
+                        </div>
+                        <div class="case-info">
+                            <span class="case-tag">北欧风格</span>
+                            <h3>90平米 北欧两居室</h3>
+                            <p>清新自然的设计，巧妙利用收纳空间，功能与美观并存。</p>
+                        </div>
+                    </article>
+                    <article class="case-card">
+                        <div class="case-img">
+                            <img src="https://picsum.photos/seed/bedroom3/600/400" alt="新中式卧室">
+                        </div>
+                        <div class="case-info">
+                            <span class="case-tag">新中式</span>
+                            <h3>140平米 新中式四居室</h3>
+                            <p>传统元素与现代材质巧妙兼柔，彰显东方雅致韵味。</p>
+                        </div>
+                    </article>
+                    <article class="case-card">
+                        <div class="case-img">
+                            <img src="https://picsum.photos/seed/bathroom4/600/400" alt="卫浴空间">
+                        </div>
+                        <div class="case-info">
+                            <span class="case-tag">日式风格</span>
+                            <h3>85平米 日式一居室</h3>
+                            <p>回归自然，质朴温馨，打造宁静致远的独处空间。</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="text-center" style="margin-top: 40px;">
+                    <a href="#" class="btn btn-outline">查看更多案例</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section id="process" class="section-padding">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-title">透明规范施工流程</h2>
+                    <p class="section-subtitle">从设计到完工，每一个环节都有严格的标准和监督，确保工程进度与质量。</p>
+                </div>
+                <div class="process-steps">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <h4>免费咨询与量房</h4>
+                        <p>专业设计师上门测量，了解户型结构及业主需求，提供初步设计方案。</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <h4>方案设计与预算</h4>
+                        <p>确定最终设计方案，出具详细效果图及预算报价单，拒绝隐形消费。</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <h4>签订合同与施工</h4>
+                        <p>签订正规装修合同，开工仪式，正规施工队进场，定期节点验收。</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <h4>软装进场与验收</h4>
+                        <p>软装搭配安装完毕，进行全屋最终验收，交付使用，提供售后保障。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote Section -->
+        <section id="quote" class="section-padding quote-section">
+            <div class="container">
+                <div class="quote-layout">
+                    <div class="quote-content">
+                        <h2>免费获取装修方案与报价</h2>
+                        <p>填写右侧表单，我们的资深设计师将在24小时内与您联系，为您提供免费的户型分析及初步报价方案。</p>
+                        <ul style="margin-bottom: 30px;">
+                            <li style="margin-bottom: 10px;">✓ 免费上门量房服务</li>
+                            <li style="margin-bottom: 10px;">✓ 透明化装修报价清单</li>
+                            <li style="margin-bottom: 10px;">✓ 专属一对一设计服务</li>
+                        </ul>
+                        <div style="font-size: 0.9rem; opacity: 0.8;">
+                            <p>已有 2,345 位业主成功获取了报价方案</p>
+                        </div>
+                    </div>
+                    <div class="quote-form">
+                        <form onsubmit="event.preventDefault(); alert('感谢您的咨询！我们会尽快联系您。');">
+                            <div class="form-group">
+                                <label for="name">您的姓名</label>
+                                <input type="text" id="name" class="form-control" placeholder="请输入姓名" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">联系电话</label>
+                                <input type="tel" id="phone" class="form-control" placeholder="请输入手机号码" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="area">房屋面积</label>
+                                <select id="area" class="form-control">
+                                    <option value="">请选择面积</option>
+                                    <option value="90以下">90平米以下</option>
+                                    <option value="90-120">90-120平米</option>
+                                    <option value="120-150">120-150平米</option>
+                                    <option value="150以上">150平米以上</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="style">装修风格</label>
+                                <select id="style" class="form-control">
+                                    <option value="">请选择风格</option>
+                                    <option value="现代简约">现代简约</option>
+                                    <option value="新中式">新中式</option>
+                                    <option value="北欧">北欧</option>
+                                    <option value="美式">美式</option>
+                                    <option value="欧式">欧式</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">立即获取报价</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section-padding">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-title">常见问题解答</h2>
+                    <p class="section-subtitle">关于花都装饰的装修流程、材料选择及售后服务，您可能关心这些问题。</p>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">装修全包和半包有什么区别？</div>
+                        <div class="faq-answer">
+                            半包指装修公司负责施工和辅材（水泥、沙子、电线等），业主自购主材（地板、瓷砖、卫浴等）；全包指装修公司负责所有材料和施工。我们建议根据预算和精力选择，全包更省心，半包更可控。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">装修工期一般需要多久？</div>
+                        <div class="faq-answer">
+                            普通两居室（90-120平米）的装修工期通常在45-60天左右，具体时间取决于设计方案复杂程度、施工进度及天气情况。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">花都装饰如何保证材料质量？</div>
+                        <div class="faq-answer">
+                            我们与国内知名品牌建材商合作，所有进场材料均提供品牌授权书及检测报告，业主可随时查验。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">装修后提供多久的质保期？</div>
+                        <div class="faq-answer">
+                            我们提供水电工程5年质保，其他隐蔽工程2年质保，竣工验收后1年整体保修，终身维修服务。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>花都装饰</h3>
+                    <p style="font-size: 0.9rem; line-height: 1.8; color: #999;">
+                        花都装饰致力于为每一位客户提供高品质的家居生活体验。我们秉承“诚信为本，质量第一”的原则，打造值得信赖的装修服务品牌。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#home">网站首页</a></li>
+                        <li><a href="#services">服务项目</a></li>
+                        <li><a href="#cases">装修案例</a></li>
+                        <li><a href="#quote">在线咨询</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>服务项目</h4>
+                    <ul>
+                        <li><a href="#">家装设计</a></li>
+                        <li><a href="#">旧房翻新</a></li>
+                        <li><a href="#">别墅装修</a></li>
+                        <li><a href="#">商业空间</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul class="contact-info">
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <span>花都区XX街道XX路XX号装饰大厦</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            <span>400-888-6666</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            <span>service@huadu-decoration.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 花都装饰工程有限公司 版权所有 | 仅供演示使用</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
