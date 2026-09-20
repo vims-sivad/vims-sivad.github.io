@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="专业避雷针厂家直供，提供防雷接地解决方案、防雷设备定制及施工服务。涵盖接闪杆、引下线、接地网等产品，符合国家标准GB标准，安全可靠，适用于建筑、电力、通信等场景。">
+    <meta name="keywords" content="避雷针厂家,防雷设备,接闪杆,防雷接地,防雷工程,接闪器">
+    <title>避雷针厂家-专业防雷设备制造商与防雷工程服务商</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #004d40; /* 深青色，代表专业、安全 */
+            --secondary-color: #00796b;
+            --accent-color: #ffab00; /* 警示黄，用于强调 */
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-light: #f4f6f8;
+            --white: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--white);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 通用布局类 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            color: var(--text-main);
+            font-size: 1rem;
+        }
+
+        .nav-menu a:hover {
+            color: var(--secondary-color);
+        }
+
+        .cta-button {
+            background-color: var(--primary-color);
+            color: var(--white) !important;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .cta-button:hover {
+            background-color: var(--secondary-color);
+            color: var(--white) !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background-color: var(--white);
+            color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary-color);
+        }
+
+        /* Features/Advantage */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            border-top: 4px solid var(--secondary-color);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+        }
+
+        /* Products Section */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 1px solid #eee;
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            height: 200px;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 3rem;
+            position: relative;
+        }
+        
+        .product-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 4px 8px;
+            font-size: 0.8rem;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .product-info p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .product-link {
+            color: var(--secondary-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* Standard Compliance */
+        .standards-section {
+            background-color: var(--bg-light);
+        }
+
+        .standards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            text-align: center;
+        }
+
+        .standard-item {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .standard-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            opacity: 0.2;
+            display: block;
+            margin-bottom: -20px;
+        }
+
+        .standard-desc h3 {
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        /* Application Scenarios */
+        .scenarios-list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .scenario-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .scenario-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(0, 77, 64, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+
+        /* FAQ */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        details {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        summary {
+            font-weight: 600;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+
+        summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        details[open] summary::after {
+            content: '-';
+        }
+
+        details p {
+            margin-top: 15px;
+            color: var(--text-light);
+            padding-left: 20px;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #263238;
+            color: #cfd8dc;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .contact-info li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .scenarios-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-button {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span>⚡</span> 防雷卫士
+            </a>
+            <nav class="nav-menu">
+                <a href="#products">防雷产品</a>
+                <a href="#solutions">解决方案</a>
+                <a href="#standards">资质标准</a>
+                <a href="#faq">常见问题</a>
+                <a href="#contact" class="cta-button">联系我们</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 首屏 Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>专业避雷针厂家<br>守护您的建筑安全</h1>
+            <p>提供符合GB标准的高性能接闪器、防雷接地系统及防雷工程服务。十年行业经验，从设计到施工，一站式解决防雷需求。</p>
+            <div class="hero-buttons">
+                <a href="#products" class="btn btn-primary">查看产品系列</a>
+                <a href="#contact" class="btn btn-outline">获取防雷方案</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心优势 -->
+    <section class="section">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>符合国标</h3>
+                    <p>所有避雷针产品均通过国家权威机构检测，严格遵循GB标准，确保接闪效率与安全性。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏭</div>
+                    <h3>源头厂家</h3>
+                    <p>自有生产基地，无中间商差价。支持OEM定制，可根据建筑高度、地质条件灵活调整参数。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>快速响应</h3>
+                    <p>24小时技术支持，提供从选型建议到现场施工指导的全流程服务，缩短工期。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品展示 -->
+    <section id="products" class="section" style="background-color: var(--bg-light);">
+        <div class="container">
+            <div class="section-title">
+                <h2>主要防雷产品系列</h2>
+                <p>针对不同场景设计的专业接闪与接地解决方案</p>
+            </div>
+            <div class="products-grid">
+                <!-- 产品 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="product-tag">热门</span>
+                        <span>⚡</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>高效接闪杆</h3>
+                        <p>采用优质不锈钢或铝合金材质，防腐耐用。适用于高层建筑、输电线路及石油化工设施。</p>
+                        <a href="#" class="product-link">了解详情 &rarr;</a>
+                    </div>
+                </div>
+                <!-- 产品 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <span>⚡</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>避雷针/接闪器</h3>
+                        <p>包括单针、双针及多针组合，覆盖角钢、圆钢及圆管型，满足不同保护半径需求。</p>
+                        <a href="#" class="product-link">了解详情 &rarr;</a>
+                    </div>
+                </div>
+                <!-- 产品 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <span>⚡</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>防雷接地模块</h3>
+                        <p>高导电率非金属接地材料，抗腐蚀性强，适用于土壤电阻率高的地区，施工便捷。</p>
+                        <a href="#" class="product-link">了解详情 &rarr;</a>
+                    </div>
+                </div>
+                <!-- 产品 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <span>⚡</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>电涌保护器 (SPD)</h3>
+                        <p>各类电压开关型和电压限制型浪涌保护器，有效保护精密电子设备免受雷击过电压损害。</p>
+                        <a href="#" class="product-link">了解详情 &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 行业应用 -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>广泛的应用领域</h2>
+                <p>我们的防雷解决方案服务于多元化的行业客户</p>
+            </div>
+            <div class="scenarios-list">
+                <div class="scenario-item">
+                    <div class="scenario-icon">🏢</div>
+                    <h3>建筑工程</h3>
+                    <p>住宅、商业综合体、学校、医院等民用及公共建筑防雷设计。</p>
+                </div>
+                <div class="scenario-item">
+                    <div class="scenario-icon">🏭</div>
+                    <h3>工业设施</h3>
+                    <p>工厂车间、仓储物流、加油站、化工厂等易燃易爆场所的防雷保护。</p>
+                </div>
+                <div class="scenario-item">
+                    <div class="scenario-icon">📡</div>
+                    <h3>电力通信</h3>
+                    <p>变电站、输电线路、微波站、基站塔及通信机房的综合防雷工程。</p>
+                </div>
+                <div class="scenario-item">
+                    <div class="scenario-icon">🏛️</div>
+                    <h3>公共设施</h3>
+                    <p>机场、高铁站、广播电视塔、博物馆及历史保护建筑的防雷加固。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 资质标准 -->
+    <section id="standards" class="section standards-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>品质与资质</h2>
+                <p>以严谨的态度通过多重认证，确保防雷安全</p>
+            </div>
+            <div class="standards-container">
+                <div class="standard-item">
+                    <span class="standard-number">01</span>
+                    <div class="standard-desc">
+                        <h3>GB标准认证</h3>
+                        <p>严格遵循中国国家标准GB 50057《建筑物防雷设计规范》。</p>
+                    </div>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-number">02</span>
+                    <div class="standard-desc">
+                        <h3>CCC强制性认证</h3>
+                        <p>关键防雷器件均通过国家强制性产品认证，质量可追溯。</p>
+                    </div>
+                </div>
+                <div class="standard-item">
+                    <span class="standard-number">03</span>
+                    <div class="standard-desc">
+                        <h3>ISO质量体系</h3>
+                        <p>通过ISO9001质量管理体系认证，生产流程标准化管理。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常见问题 FAQ -->
+    <section id="faq" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>常见问题解答</h2>
+            </div>
+            <div class="faq-container">
+                <details>
+                    <summary>避雷针和接闪器有什么区别？</summary>
+                    <p>避雷针通常指整个防雷保护系统中的接闪部件，即顶端的金属棒。而接闪器是广义的术语，包括避雷针、避雷线、避雷带等。厂家提供的避雷针本质上就是一种高性能的接闪器。</p>
+                </details>
+                <details>
+                    <summary>如何计算避雷针的保护范围？</summary>
+                    <p>根据滚球法（GB标准）或折线法计算。主要取决于避雷针的高度、单针或多针组合以及被保护物的高度。建议联系厂家工程师进行现场勘测和方案设计。</p>
+                </details>
+                <details>
+                    <summary>防雷接地需要多长时间施工？</summary>
+                    <p>接地体的施工周期取决于地质情况和接地体的布置方式。常规的独立接地网施工通常在3-7个工作日内完成，具体需根据现场勘查报告确定。</p>
+                </details>
+                <details>
+                    <summary>你们的避雷针能用多久？</summary>
+                    <p>采用304不锈钢或铝合金材质，配合热镀锌工艺，在正常大气环境下使用寿命可达30年以上。具体寿命受安装环境（如沿海高盐雾地区）影响。</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部联系 -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="color: white; margin-bottom: 20px;">
+                        <span>⚡</span> 防雷卫士
+                    </div>
+                    <p style="font-size: 0.9rem; line-height: 1.8; color: #90a4ae;">
+                        专注于防雷领域十余年，致力于为客户提供最安全、最可靠的防雷产品与工程服务。保护生命财产安全，我们是专业的守护者。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#products">产品中心</a></li>
+                        <li><a href="#solutions">工程案例</a></li>
+                        <li><a href="#standards">资质证书</a></li>
+                        <li><a href="#faq">技术支持</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>产品系列</h4>
+                    <ul>
+                        <li><a href="#">接闪杆</a></li>
+                        <li><a href="#">接地模块</a></li>
+                        <li><a href="#">浪涌保护器</a></li>
+                        <li><a href="#">防雷网格</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul class="contact-info">
+                        <li>
+                            <span>📍</span>
+                            <span>中国·某市高新技术开发区XX路88号</span>
+                        </li>
+                        <li>
+                            <span>📞</span>
+                            <span>400-123-4567</span>
+                        </li>
+                        <li>
+                            <span>📧</span>
+                            <span>sales@example.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 防雷卫士防雷科技有限公司 版权所有 | 沪ICP备XXXXXXXX号</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
