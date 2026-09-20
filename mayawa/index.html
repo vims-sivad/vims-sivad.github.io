@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="玛雅wang - 专业玛雅建模、渲染与动画技术分享平台，提供Maya教程、插件下载、行业资讯及学习交流指南。">
+    <meta name="keywords" content="玛雅wang, Maya教程, 3D建模, 渲染, 动画制作, 3D软件, CG教程">
+    <title>玛雅wang - Maya建模渲染与动画制作技术指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --bg-body: #0f1115;
+            --bg-card: #181b21;
+            --bg-nav: rgba(15, 17, 21, 0.95);
+            --accent-primary: #00bcd4;
+            --accent-secondary: #7c4dff;
+            --text-main: #e0e6ed;
+            --text-muted: #94a3b8;
+            --border-color: #2d3748;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .grid {
+            display: grid;
+            gap: var(--spacing-unit);
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flex-col {
+            flex-direction: column;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+        .gap-1 { gap: 1rem; }
+        .gap-2 { gap: 2rem; }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.5em;
+        }
+
+        h1 { font-size: 2.5rem; letter-spacing: -0.5px; }
+        h2 { font-size: 1.75rem; border-left: 4px solid var(--accent-primary); padding-left: 1rem; margin-top: 3rem; }
+        h3 { font-size: 1.25rem; color: var(--accent-primary); }
+
+        .text-gradient {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: var(--bg-nav);
+            border-bottom: 1px solid var(--border-color);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-primary);
+        }
+
+        .btn-subscribe {
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            padding: 0.5rem 1.2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .btn-subscribe:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(124, 77, 255, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+            z-index: -1;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 1rem auto 2rem;
+        }
+
+        /* Feature Grid */
+        .feature-grid {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            margin-bottom: 4rem;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-primary);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Content Sections */
+        .section-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .section-layout {
+                grid-template-columns: 1fr;
+            }
+            h1 { font-size: 2rem; }
+            .nav-links { display: none; } /* Simplified mobile nav for brevity */
+        }
+
+        /* Article List */
+        .article-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .article-card {
+            background: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (min-width: 600px) {
+            .article-card {
+                flex-direction: row;
+                height: 180px;
+            }
+        }
+
+        .article-thumb {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #2d3748;
+        }
+
+        @media (min-width: 600px) {
+            .article-thumb {
+                width: 280px;
+                height: 100%;
+            }
+        }
+
+        .article-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-secondary);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .article-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .article-excerpt {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+
+        .sidebar-widget h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .download-list li {
+            margin-bottom: 0.75rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding-bottom: 0.75rem;
+        }
+
+        .download-list li:last-child {
+            border-bottom: none;
+        }
+
+        .download-list a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.95rem;
+        }
+
+        .download-list span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            background: rgba(255,255,255,0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        /* Video Grid */
+        .video-grid {
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .video-card {
+            background: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: opacity 0.2s;
+        }
+
+        .video-card:hover {
+            opacity: 0.9;
+        }
+
+        .video-thumb-container {
+            position: relative;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            background: #000;
+        }
+
+        .video-thumb-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(4px);
+        }
+
+        .play-icon::after {
+            content: '';
+            border-style: solid;
+            border-width: 8px 0 8px 14px;
+            border-color: transparent transparent transparent #fff;
+            margin-left: 2px;
+        }
+
+        .video-info {
+            padding: 1rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: var(--bg-card);
+            padding: 3rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 4rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 1.5rem;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .faq-question {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #fff;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .faq-answer {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 4rem 0 2rem;
+            margin-top: auto;
+            background: #0b0d10;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 1.2rem;
+            color: #fff;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-primary);
+        }
+
+        .copyright {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* Utility */
+        .badge {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .badge-new { background: rgba(0, 188, 212, 0.2); color: var(--accent-primary); }
+        .badge-hot { background: rgba(255, 87, 34, 0.2); color: #ff5722; }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-inner">
+            <a href="#" class="logo">玛雅<span class="text-gradient">wang</span></a>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#tutorials">基础教程</a>
+                <a href="#advanced">进阶技巧</a>
+                <a href="#plugins">插件资源</a>
+                <a href="#community">社区交流</a>
+            </nav>
+            <a href="#subscribe" class="btn-subscribe">加入会员</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero container">
+            <h1>构建你的 3D 数字世界</h1>
+            <p>专注于 Maya 建模、布线优化、UV 展开与高级渲染技术的深度解析。无论你是初学者还是行业专家，这里都有你需要的技术方案。</p>
+            <div class="flex justify-between items-center" style="gap: 1rem;">
+                <a href="#tutorials" class="btn-subscribe">开始学习</a>
+                <a href="#plugins" style="color: var(--text-muted); border-bottom: 1px solid var(--text-muted);">浏览插件库 &rarr;</a>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="container">
+            <div class="grid feature-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">🎨</span>
+                    <h3>高精度建模</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">掌握多边形建模、细分曲面与布线逻辑，打造电影级角色与场景。</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">📐</span>
+                    <h3>UV 展开与纹理</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">专业的 UV 映射技巧，配合 Substance Painter 纹理绘制流程。</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🎬</span>
+                    <h3>角色绑定与动画</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">从骨骼搭建到表情绑定，掌握角色动作设计的核心原理。</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">✨</span>
+                    <h3>Arnold 渲染指南</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">学习全局光照、次表面散射与光线追踪，提升作品视觉质感。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Area -->
+        <div class="container section-layout">
+            
+            <!-- Left Column: Articles -->
+            <div class="content-col">
+                <h2>最新技术文章</h2>
+                
+                <article class="article-card">
+                    <img src="https://picsum.photos/seed/maya1/600/400" alt="Maya布线示意图" class="article-thumb">
+                    <div class="article-content">
+                        <span class="tag">布线优化</span>
+                        <h3 class="article-title"><a href="#">Maya 多边形布线终极指南：从基础到高级逻辑</a></h3>
+                        <p class="article-excerpt">为什么你的模型在动画时会出现穿模？本文详细解析四边形布线的原则、非流形几何体的检测与修复方法，帮助你在游戏开发中达到工业级标准。</p>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://picsum.photos/seed/maya2/600/400" alt="角色绑定示意图" class="article-thumb">
+                    <div class="article-content">
+                        <span class="tag">角色绑定</span>
+                        <h3 class="article-title"><a href="#">Maya Rigging 进阶：IK/FK 混合绑定系统解析</a></h3>
+                        <p class="article-excerpt">如何制作一套既流畅又易于控制的角色绑定？本文将演示如何在 Maya 中搭建 IK/FK 切换系统，并探讨旋转轴心与控制器的层级管理技巧。</p>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://picsum.photos/seed/maya3/600/400" alt="渲染场景示意图" class="article-thumb">
+                    <div class="article-content">
+                        <span class="tag">渲染</span>
+                        <h3 class="article-title"><a href="#">Arnold 渲染器参数深度调优实战</a></h3>
+                        <p class="article-excerpt">面对渲染速度慢和噪点多的问题，除了增加采样数还有什么办法？本文分享基于 GPU 加速的渲染参数设置，以及使用 Irradiance Map 优化光照。</p>
+                    </div>
+                </article>
+
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="#" class="btn-subscribe" style="background: transparent; border: 1px solid var(--border-color);">查看更多文章</a>
+                </div>
+            </div>
+
+            <!-- Right Column: Sidebar -->
+            <aside class="sidebar-col">
+                <!-- Plugin Download Widget -->
+                <div class="sidebar-widget">
+                    <h3>热门插件推荐</h3>
+                    <ul class="download-list">
+                        <li>
+                            <a href="#">
+                                <span>UV Layout Master</span>
+                                <span>v2.5</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span>SoftSelection Pro</span>
+                                <span>v1.8</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span>Retopoflow</span>
+                                <span>v3.0</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span>Quixel Bridge</span>
+                                <span>集成版</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Quick Tips Widget -->
+                <div class="sidebar-widget">
+                    <h3>快捷键速查</h3>
+                    <div style="font-size: 0.9rem; color: var(--text-muted);">
+                        <p style="margin-bottom: 0.5rem;"><strong>切换顶点模式：</strong> <code>F5</code></p>
+                        <p style="margin-bottom: 0.5rem;"><strong>切换面模式：</strong> <code>F6</code></p>
+                        <p style="margin-bottom: 0.5rem;"><strong>旋转视图：</strong> <code>Alt + R</code></p>
+                        <p style="margin-bottom: 0.5rem;"><strong>缩放视图：</strong> <code>Alt + W</code></p>
+                        <p><strong>平移视图：</strong> <code>Alt + V</code></p>
+                    </div>
+                </div>
+
+                <!-- Newsletter Widget -->
+                <div class="sidebar-widget" id="subscribe">
+                    <h3>每周技术简报</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">订阅我们的邮件，第一时间获取 Maya 更新资讯与独家教程。</p>
+                    <form onsubmit="event.preventDefault(); alert('感谢订阅！这是演示页面，未连接后台。');">
+                        <input type="email" placeholder="输入您的邮箱" style="width: 100%; padding: 0.6rem; border-radius: 4px; border: 1px solid var(--border-color); background: #0f1115; color: #fff; margin-bottom: 0.5rem;">
+                        <button type="submit" class="btn-subscribe" style="width: 100%; border: none;">立即订阅</button>
+                    </form>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Video Tutorials -->
+        <section class="container">
+            <h2>精选视频教程</h2>
+            <div class="grid video-grid">
+                <div class="video-card">
+                    <div class="video-thumb-container">
+                        <img src="https://picsum.photos/seed/v1/600/400" alt="视频封面">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">Maya 2024 新功能演示</h4>
+                        <span class="badge badge-new">新功能</span>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-thumb-container">
+                        <img src="https://picsum.photos/seed/v2/600/400" alt="视频封面">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">硬表面建模：机甲制作流程</h4>
+                        <span class="badge badge-hot">热门</span>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-thumb-container">
+                        <img src="https://picsum.photos/seed/v3/600/400" alt="视频封面">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div class="video-info">
+                        <h4 style="font-size: 1rem; margin-bottom: 0.5rem;">PBR 材质全流程解析</h4>
+                        <span class="badge badge-new">材质</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="container">
+            <h2>常见问题解答 (FAQ)</h2>
+            <div class="faq-section">
+                <div class="faq-item">
+                    <div class="faq-question">玛雅wang 的教程适用于哪些版本？</div>
+                    <div class="faq-answer">我们的大部分基础教程基于 Maya 2020 及以上版本编写，但核心操作逻辑适用于 2016 至 2024 之间的所有主流版本。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">提供软件下载吗？</div>
+                    <div class="faq-answer">为了版权保护，我们不建议提供破解版软件下载。我们建议通过 Autodesk 官方试用或教育许可获取软件，并推荐使用开源替代方案。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">如何参与社区投稿？</div>
+                    <div class="faq-answer">您可以在社区板块注册账号，提交您的作品或文章。审核通过后，您的作品将有机会获得“每周精选”推荐。</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo" style="font-size: 1.2rem; display: block; margin-bottom: 1rem;">玛雅<span class="text-gradient">wang</span></a>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">致力于分享 Maya 3D 建模与动画制作的专业知识，打造最纯粹的技术交流社区。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>资源分类</h4>
+                    <ul>
+                        <li><a href="#">基础教程</a></li>
+                        <li><a href="#">进阶技巧</a></li>
+                        <li><a href="#">插件下载</a></li>
+                        <li><a href="#">模型素材</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>支持</h4>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">免责声明</a></li>
+                        <li><a href="#">联系方式</a></li>
+                        <li><a href="#">加入我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">Bilibili 视频号</a></li>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">Twitter / X</a></li>
+                        <li><a href="#">GitHub 仓库</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 玛雅wang 版权所有. 本站内容仅供学习交流使用.
+            </div>
+        </div>
+    </footer>
+
+</body>
+                                     </html>
